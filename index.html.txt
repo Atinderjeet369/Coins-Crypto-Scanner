@@ -1,0 +1,85 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Crypto Scanner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+    header {
+      padding: 12px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      background: #161b22;
+    }
+    button {
+      padding: 10px 14px;
+      border: none;
+      background: #238636;
+      color: white;
+      border-radius: 6px;
+      margin: 5px;
+      font-size: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #30363d;
+      font-size: 13px;
+      text-align: center;
+    }
+    th {
+      background: #161b22;
+      position: sticky;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>🔐 Private Crypto Scanner (Binance USDT)</header>
+
+<div style="padding:10px; text-align:center;">
+  <button onclick="scan()">🔍 Scan Now</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coin</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="results"></tbody>
+</table>
+
+<script>
+const coins = ["BTCUSDT","ETHUSDT","BNBUSDT","SOLUSDT","XRPUSDT"];
+
+function scan() {
+  const tbody = document.getElementById("results");
+  tbody.innerHTML = "";
+
+  coins.forEach(c => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${c}</td><td>Scanning...</td>`;
+    tbody.appendChild(row);
+  });
+}
+</script>
+
+</body>
+</html>
